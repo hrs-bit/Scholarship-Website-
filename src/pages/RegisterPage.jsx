@@ -11,6 +11,7 @@ export default function RegisterPage() {
 
   // Check session on mount and listen for auth changes
   useEffect(() => {
+    if (!supabase) { setAuthLoading(false); return }
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null)
       setAuthLoading(false)
@@ -25,6 +26,7 @@ export default function RegisterPage() {
   }, [])
 
   async function handleGoogleLogin() {
+    if (!supabase) return
     setSigningIn(true)
     await supabase.auth.signInWithOAuth({
       provider: 'google',
@@ -36,6 +38,7 @@ export default function RegisterPage() {
   }
 
   async function handleSignOut() {
+    if (!supabase) return
     await supabase.auth.signOut()
     setUser(null)
   }

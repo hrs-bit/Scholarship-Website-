@@ -45,6 +45,11 @@ export default function RegistrationForm({ user }) {
       setErrors(errs)
       return
     }
+    if (!supabase) {
+      setStatus('error')
+      setServerError('Service is currently unavailable. Please try again later.')
+      return
+    }
     setStatus('loading')
     setServerError('')
     try {
