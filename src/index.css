@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    @apply bg-slate-50 text-slate-800;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-700 to-indigo-600 bg-clip-text text-transparent;
+  }
+
+  .glass {
+    backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.85);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scholarship-card {
+  animation: fadeInUp 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+.scholarship-card:nth-child(1) { animation-delay: 0.05s; }
+.scholarship-card:nth-child(2) { animation-delay: 0.1s; }
+.scholarship-card:nth-child(3) { animation-delay: 0.15s; }
+.scholarship-card:nth-child(4) { animation-delay: 0.2s; }
+.scholarship-card:nth-child(5) { animation-delay: 0.25s; }
+.scholarship-card:nth-child(6) { animation-delay: 0.3s; }
+.scholarship-card:nth-child(7) { animation-delay: 0.35s; }
+.scholarship-card:nth-child(8) { animation-delay: 0.4s; }
+.scholarship-card:nth-child(9) { animation-delay: 0.45s; }
+.scholarship-card:nth-child(10) { animation-delay: 0.5s; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #64748b; }

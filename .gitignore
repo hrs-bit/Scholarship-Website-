@@ -1,0 +1,24 @@
+# ── Dependencies ─────────────────────────────
+node_modules/
+
+# ── Build output ─────────────────────────────
+dist/
+dist-ssr/
+
+# ── Environment variables (NEVER commit these) ─
+.env
+.env.local
+.env.*.local
+
+# ── Editor / OS ──────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# ── Logs ─────────────────────────────────────
+*.log
+npm-debug.log*
